@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Combined Carton Tracker</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
@@ -16,18 +17,20 @@
     nav {
       display: flex;
       background: #FF9900;
-      flex-wrap: wrap;
+      overflow-x: auto;
+      flex-wrap: nowrap;
       justify-content: center;
     }
 
     nav button {
       flex: 1 1 auto;
       min-width: 120px;
-      padding: 1em;
+      padding: 1em 1.5em;
       background: #ffb444;
       color: #fff;
       border: none;
       cursor: pointer;
+      font-size: 1em;
     }
 
     nav button:hover {
@@ -50,24 +53,38 @@
     label {
       display: block;
       margin: 1em 0 0.5em;
+      font-size: 1em;
     }
 
     input {
       width: 100%;
-      padding: 0.5em;
+      padding: 0.75em;
     }
 
     button.save, button.reset {
       margin-top: 1em;
       margin-right: 1em;
-      padding: 0.5em 1em;
+      padding: 0.5em 1.5em;
       cursor: pointer;
       display: inline-block;
     }
 
     canvas {
       max-width: 100%;
+      height: auto;
     }
+    
+    @media (max-width: 768px) {
+    body {
+      font-size: 14px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    body {
+      font-size: 12px;
+    }
+  }
   </style>
 </head>
 <body>
